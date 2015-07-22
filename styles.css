@@ -1,0 +1,178 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,500,700);
+
+html, body {
+	font-family: Roboto, sans-serif;
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+.state {
+  fill: none;
+  stroke: #fff;
+  stroke-linejoin: round;
+}
+
+#rail, #container {
+	display: inline-block;
+	vertical-align: top;
+}
+
+#rail {
+	width: 200px;
+	overflow-y: scroll;
+	border-left: 1px solid #ccc;
+	padding: 5px 0px;
+}
+
+#rail ul {
+	list-style: none;
+	padding: 0px;
+	margin: 0;
+}
+
+#rail li {
+	margin: 0;
+	padding: 5px 5px 0px;
+	border-bottom: 1px solid #ccc;
+	cursor: pointer;
+}
+
+#rail li .name {
+	position: relative;
+	top: 8px;
+	height: 50px;
+	width: 20px;
+	display: inline-block;
+	vertical-align: top;
+	padding-left: 5px;
+	font-weight: 300;
+}
+
+	#rail li.selected .name {
+        font-weight: 600;
+	}
+
+#rail li img {
+	height: 50px;
+	background-color: #ddd;
+}
+
+	#rail li:hover img {
+		background-color: #ccc;
+	}
+
+	#rail li.selected img {
+		background-color: #EA463D;
+	} 
+	
+		#rail li.selected:hover img {
+			background-color: #EA463D;
+		}
+
+#container {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+svg {
+	width: 100%;
+	height: 100%;
+}
+
+.county {
+	fill: #eee;
+	stroke: #ddd;
+	stroke-width: 1px;
+	transition: all .25s;
+}
+
+.county.money {
+	fill: #FDC26D;
+	stroke: #C7DCE9;
+}
+
+.county.selected {
+	fill: #EA463D;
+	stroke: #C7DCE9;
+}
+.state {
+	stroke: white;
+}
+
+.title {
+	text-align: center;
+}
+
+.title h1 {
+	margin: 0;
+	padding: 0;
+	margin-bottom: 5px;
+}
+
+.title p {
+	line-height: 1.5em;
+	font-weight: 40px;
+//	max-width: 500px;
+	font-size: 11pt;
+	font-weight: 300;
+}
+
+	.title p:first-of-type {
+		margin-top: 0px;
+	}
+
+.title .red, .title .orange {
+	padding: 2px 6px;
+	color: white;
+	font-weight: 500;
+}
+
+.title .red {
+	background-color: #EA463D ;
+}
+
+.title .orange {
+	background-color: #FDC26D;
+}
+
+.hover {
+	position: absolute;
+	background-color: white;
+	width: 200px;
+	box-shadow: 0px 0px 5px gray;
+	padding: 10px;
+	
+}
+
+.location {
+	font-weight: 900;
+  border-bottom: 1px solid #999;
+  padding-bottom: 3px;
+  margin-bottom: 6px;
+}
+
+.hover table {
+	width: 100%;
+	font-size: 10pt;
+}
+
+.hover td {
+	padding: 5px 0px;
+}
+
+.hover td.selected {
+	font-weight: 600;
+}
+
+.money {
+	text-align: right;
+}
+
+.nada {
+	color: #aaa;
+	font-size: 10pt;
+	
+}

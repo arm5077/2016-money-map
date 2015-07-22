@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="moneyApp">
+<head>
+
+	<!-- D3 -->
+	<script src="bower_components/d3/d3.min.js"></script>
+
+	<!-- TopoJSON -->
+	<script src="bower_components/topojson/topojson.js"></script>
+
+	<!-- Angular -->
+	<script src="bower_components/angular/angular.min.js"></script>
+
+	<!-- Site-specific styles -->
+	<link rel="stylesheet" href="styles.css" />
+
+</head>
+
+<body ng-controller = "moneyController">
+
+	<div id = "container" size-to-sibling sibling="rail">
+		<div class="title">
+			<h1>Where 2016 candidates raised their money</h1>
+			<p>Counties are highlighted if a candidate <span class="orange">raised money there</span> or if they <span class="red">raised more</span> than any other 2016 contender. Hover for details.</p>
+		</div>
+		
+		<div class = "hover" ng-show="selectedCounty">
+			<div class = "location">{{selectedCounty.NAMELSAD}}, {{stateFIPS[selectedCounty.STATEFP].abbreviation}}</div>
+			<div class="nada" ng-show="!selectedCounty.export_tot">No donors.</div>
+			<table ng-show="selectedCounty.export_tot">
+				<tr ng-repeat="candidate in candidates | orderBy:sortCandidatesTable : reverse = true" ng-show="selectedCounty[candidate.column] > 0">
+					<td ng-class="{selected: candidate.name == selectedCandidate.name}">{{candidate.name}}</td>
+					<td class="money">${{selectedCounty[candidate.column].formatMoney(0)}}</td>
+				</tr>
+			</table>
+		</div>
+		
+		
+		
+	</div>
+	<div id = "rail">
+		<ul>
+			<li ng-repeat="candidate in candidates" ng-click="toggleColors(candidate)" ng-class="{selected: candidate.selected}">
+				<img ng-src="img/{{candidate.name.substring(candidate.name.indexOf(' ') + 1, 1000)}}.png" />
+				<span class="name">{{candidate.name.replace(" ", "\n")}}</span>
+			</li>
+	</div>
+	
+	
+</body>
+
+<!-- Site-specific scripts -->
+<script type="text/javascript" src="app.js"></script>
+
+</html>
