@@ -329,7 +329,7 @@ angular.module("moneyApp", [])
 		});
 	});
 		
-	d3.json("/counties_with_results_topo.json", function(error, us) {
+	d3.json("counties_with_results_topo.json", function(error, us) {
 	  if (error) throw error;
 
 		country = svg.append("g")

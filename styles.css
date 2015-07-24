@@ -2,8 +2,6 @@
 
 html, body {
 	font-family: Roboto, sans-serif;
-	height: 100%;
-	width: 100%;
 	padding: 0;
 	margin: 0;
 }
@@ -118,6 +116,8 @@ svg {
 //	max-width: 500px;
 	font-size: 11pt;
 	font-weight: 300;
+	width: 80%;
+	margin: auto;
 }
 
 	.title p:first-of-type {
@@ -136,6 +136,7 @@ svg {
 
 .title .orange {
 	background-color: #FDC26D;
+	color: rgba(0,0,0,.75);
 }
 
 .hover {
